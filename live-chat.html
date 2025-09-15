@@ -1,0 +1,144 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Canlı Destek - MedMar</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #11a4d4;
+      }
+      .dark {
+        --bg-color: #111618;
+        --text-color: #f0f3f4;
+        --secondary-text-color: #617f89;
+        --accent-color: #11a3d4;
+        --border-color: #2c3e50;
+        --input-bg-color: #1a202c;
+      }
+      .light {
+        --bg-color: #ffffff;
+        --text-color: #111618;
+        --secondary-text-color: #617f89;
+        --accent-color: #11a3d4;
+        --border-color: #f0f3f4;
+        --input-bg-color: #f0f3f4;
+      }
+    </style>
+</head>
+<body class="light" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
+<div class="flex items-center gap-4 text-[var(--text-color)]">
+<svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+<a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
+<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+<a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0" id="theme-toggle">
+<span class="material-symbols-outlined dark:hidden">light_mode</span>
+<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIu0M7YlURLN_eFeq3Am-lzlUkuiROZpJB3yamWrShbZaCFAtjO6_44_fOM9YuuqoSUbCMvsOs9Ih_4Y_fCCM2uHNdQvUlB0kif3E28X1j80amCac82OqbtenUYjBKEkQGceQThvOY9gZCTHY0kZSzjOZN5_OTyNZyJZfA7tmB7rQtBpI8Y-op6ze0gnKMdEQ5_SYmij7lTKPa5oio2vmXUzVeE1CgFn9GxzTAk47-2feS_vCJh9529N-tuuqRuU1cGgchyH2YJUo");'></div>
+</div>
+</header>
+<main class="flex-1 px-40 flex justify-center items-center py-16">
+<div class="w-full max-w-2xl bg-[var(--input-bg-color)] rounded-lg shadow-xl p-8 flex flex-col h-[600px]">
+<h2 class="text-3xl font-bold mb-6 text-center">Canlı Destek</h2>
+<div class="flex-1 overflow-y-auto space-y-4 p-4 rounded-lg bg-[var(--bg-color)] border border-[var(--border-color)] mb-4" id="chat-history">
+<div class="flex justify-start">
+<div class="bg-[var(--accent-color)] text-white p-4 rounded-lg max-w-[75%]">
+Sizler için 7/24 hazırız.
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<input class="form-input flex-1 p-3 rounded-lg border border-[var(--border-color)] bg-[var(--bg-color)] text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]" id="chat-input" placeholder="Mesajınızı buraya yazın..." type="text"/>
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" id="send-button">
+<span class="truncate">Gönder</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        body.classList.toggle('light');
+      });
+
+      const chatInput = document.getElementById('chat-input');
+      const sendButton = document.getElementById('send-button');
+      const chatHistory = document.getElementById('chat-history');
+
+      sendButton.addEventListener('click', () => {
+        sendMessage();
+      });
+
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+
+      function sendMessage() {
+        const message = chatInput.value.trim().toLowerCase();
+        if (message === '') {
+          return;
+        }
+
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'flex justify-end';
+        userMessageDiv.innerHTML = `<div class="bg-[var(--secondary-text-color)] text-[var(--text-color)] p-4 rounded-lg max-w-[75%]">${chatInput.value.trim()}</div>`;
+        chatHistory.appendChild(userMessageDiv);
+
+        chatInput.value = '';
+
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+        const isWeekday = day >= 1 && day <= 5;
+        const isWorkingHours = isWeekday && hour >= 9 && hour < 18;
+
+        let botMessage = 'Size yardımcı olmak için buradayız. Lütfen sorunuzu daha açık bir şekilde belirtin.';
+
+        if (!isWorkingHours) {
+          botMessage = 'Şu an mesai saatleri dışındayız. Mesajınızı not aldık ve en kısa sürede size geri dönüş yapacağız. İsterseniz, mesai saatlerimiz içinde (Pazartesi-Cuma, 09:00-18:00) 0555 123 45 67 numaralı telefonu arayarak da bize ulaşabilirsiniz.';
+        } else if (message.includes('sipariş')) {
+          botMessage = 'Siparişinizle ilgili tüm bilgileri "Siparişlerim" sayfasından kontrol edebilirsiniz. Eğer bir sorun yaşıyorsanız, sipariş numaranızı belirterek bize detayları iletebilirsiniz.';
+        } else if (message.includes('bilgi')) {
+          botMessage = 'Hangi konuda bilgi almak istediğinizi belirtirseniz, size daha iyi yardımcı olabiliriz.';
+        } else if (message.includes('ulaşabilirim') || message.includes('yeriniz') || message.includes('nerede')) {
+          botMessage = 'Bize telefon, WhatsApp veya iletişim formumuz aracılığıyla ulaşabilirsiniz. Fiziksel mağazamız hakkında bilgi almak için lütfen adres bilgisi isteyin.';
+        } else if (message.includes('online') || message.includes('satış')) {
+          botMessage = 'Evet, tüm ürünlerimizi online olarak satın alabilirsiniz. Lütfen "Sipariş" sayfamızı ziyaret edin.';
+        } else if (message.includes('günler') || message.includes('saatler') || message.includes('çalışıyorsunuz') || message.includes('açıksınız')) {
+          botMessage = 'Hafta içi Pazartesi\'den Cuma\'ya, 09:00-18:00 saatleri arasında hizmet veriyoruz.';
+        } else if (message.includes('dükkanınıza') || message.includes('gelmem')) {
+          botMessage = 'Maalesef, fiziksel bir dükkanımız bulunmamaktadır. Tüm satışlarımız online platform üzerinden gerçekleşmektedir.';
+        }
+
+        setTimeout(() => {
+          const botMessageDiv = document.createElement('div');
+          botMessageDiv.className = 'flex justify-start';
+          botMessageDiv.innerHTML = `<div class="bg-[var(--accent-color)] text-white p-4 rounded-lg max-w-[75%]">${botMessage}</div>`;
+          chatHistory.appendChild(botMessageDiv);
+
+          chatHistory.scrollTop = chatHistory.scrollHeight;
+        }, 500);
+      }
+    </script>
+</body></html>
