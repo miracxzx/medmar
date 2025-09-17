@@ -3,7 +3,7 @@
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <meta charset="utf-8"/>
-<title>MEDMAR</title>
+<title>Stitch Design</title>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
@@ -26,10 +26,29 @@
         --border-color: #f0f3f4;
         --input-bg-color: #f0f3f4;
       }
+
+      /* Kart animasyon stilleri */
+      .card-container {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+      .card {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .card.is-flipped {
+        transform: rotateY(180deg);
+      }
+      .card-front, .card-back {
+        backface-visibility: hidden;
+      }
+      .card-back {
+        transform: rotateY(180deg);
+      }
     </style>
 </head>
 <body class="light">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden bg-[var(--bg-color)] text-[var(--text-color)]" style='font-family: Inter, "Noto Sans", sans-serif;'>
 <div class="layout-container flex h-full grow flex-col">
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
 <div class="flex items-center gap-4 text-[var(--text-color)]">
@@ -39,9 +58,9 @@
 <h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
 </div>
 <nav class="flex items-center gap-8">
-<a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+<a href="home.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
 <a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
-<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Hakkımızda</a>
 <a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
 </nav>
 <div class="flex items-center gap-4">
@@ -84,18 +103,46 @@
 <h2 class="text-2xl font-bold text-[var(--text-color)] pt-6">Ödeme Şekli</h2>
 <div class="space-y-4">
 <label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
-<input checked="" class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" type="radio"/>
+<input checked="" class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg viewBox=\'0 0 16 16\' fill=\'rgb(17,163,212)\' xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle cx=\'8\' cy=\'8\' r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" id="credit-card-radio" type="radio"/>
 <span class="text-[var(--text-color)] text-sm font-medium">Kredi Kartı</span>
 </label>
 <label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
-<input class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" type="radio"/>
+<input class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg viewBox=\'0 0 16 16\' fill=\'rgb(17,163,212)\' xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle cx=\'8\' cy=\'8\' r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" id="wire-transfer-radio" type="radio"/>
 <span class="text-[var(--text-color)] text-sm font-medium">Havale</span>
 </label>
 </div>
+<div id="credit-card-section">
+<div class="card-container h-56 w-96 mx-auto mb-6">
+<div id="card-visual" class="card relative h-full w-full rounded-xl shadow-lg bg-gradient-to-br from-gray-200 to-gray-500 text-white">
+<div class="card-front absolute inset-0 p-6 flex flex-col justify-between">
+<div class="flex justify-end">
+<img id="card-logo" class="w-12 h-12" src="" alt="" style="display: none;"/>
+</div>
+<div>
+<p id="card-number-display" class="text-2xl font-mono tracking-widest mt-8">
+**** **** **** ****
+</p>
+</div>
+<div class="flex justify-between items-center text-sm font-light">
+<p id="card-name-display">İsim Soyisim</p>
+<p id="card-expiry-display">AA/YY</p>
+</div>
+</div>
+<div class="card-back absolute inset-0 p-6 flex flex-col justify-center items-end bg-gradient-to-br from-gray-500 to-gray-800 rounded-xl">
+<div class="h-10 w-full bg-black my-4"></div>
+<p class="text-sm">CVV</p>
+<p id="card-cvv-display" class="text-lg font-mono tracking-widest mt-1">***</p>
+</div>
+</div>
+</div>
 <div class="grid grid-cols-1 gap-6 pt-6">
 <div>
+<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-full-name">Kart Üzerindeki İsim</label>
+<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="card-full-name" placeholder="Kart üzerindeki tam ad" type="text"/>
+</div>
+<div>
 <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-number">Kart Numarası</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="card-number" placeholder="Enter card number" type="text"/>
+<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="card-number" placeholder="Enter card number" type="text" maxlength="19"/>
 </div>
 <div class="grid grid-cols-2 gap-6">
 <div>
@@ -105,6 +152,29 @@
 <div>
 <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="cvv">CVV</label>
 <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="cvv" placeholder="123" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div id="wire-transfer-section" class="hidden pt-6">
+<div class="bg-[var(--input-bg-color)] p-6 rounded-lg border border-[var(--border-color)] space-y-4">
+<h3 class="text-xl font-bold">Banka Hesap Bilgileri</h3>
+<p class="text-[var(--secondary-text-color)]">Lütfen sipariş tutarını aşağıdaki hesaba havale veya EFT yoluyla gönderin.</p>
+<div>
+<p class="text-sm font-medium">Banka Adı:</p>
+<p class="font-semibold">Örnek Bankası A.Ş.</p>
+</div>
+<div>
+<p class="text-sm font-medium">Şube Adı:</p>
+<p class="font-semibold">Merkez Şube</p>
+</div>
+<div>
+<p class="text-sm font-medium">IBAN:</p>
+<p class="font-semibold text-[var(--accent-color)]">TR98 0000 0000 0000 0000 0000 00</p>
+</div>
+<div>
+<p class="text-sm font-medium">Hesap Sahibi:</p>
+<p class="font-semibold">MedMar Sağlık Ürünleri A.Ş.</p>
 </div>
 </div>
 </div>
@@ -174,6 +244,91 @@
       themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark');
         body.classList.toggle('light');
+      });
+
+      const creditCardRadio = document.getElementById('credit-card-radio');
+      const wireTransferRadio = document.getElementById('wire-transfer-radio');
+      const creditCardSection = document.getElementById('credit-card-section');
+      const wireTransferSection = document.getElementById('wire-transfer-section');
+
+      const cardFullNameInput = document.getElementById('card-full-name');
+      const cardNumberInput = document.getElementById('card-number');
+      const expiryDateInput = document.getElementById('expiry-date');
+      const cvvInput = document.getElementById('cvv');
+      const cardVisual = document.getElementById('card-visual');
+      const cardLogo = document.getElementById('card-logo');
+
+      const cardNumberDisplay = document.getElementById('card-number-display');
+      const cardNameDisplay = document.getElementById('card-name-display');
+      const cardExpiryDisplay = document.getElementById('card-expiry-display');
+      const cardCvvDisplay = document.getElementById('card-cvv-display');
+      const fullNameInput = document.getElementById('full-name');
+
+
+      creditCardRadio.addEventListener('change', () => {
+        if (creditCardRadio.checked) {
+          creditCardSection.classList.remove('hidden');
+          wireTransferSection.classList.add('hidden');
+        }
+      });
+
+      wireTransferRadio.addEventListener('change', () => {
+        if (wireTransferRadio.checked) {
+          wireTransferSection.classList.remove('hidden');
+          creditCardSection.classList.add('hidden');
+        }
+      });
+
+      // Kart numarasını biçimlendir ve kartta göster
+      cardNumberInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\s/g, '').substring(0, 16);
+        const formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+        e.target.value = formattedValue;
+        cardNumberDisplay.textContent = formattedValue || '**** **** **** ****';
+
+        // Kart logosunu göster/gizle
+        const firstDigit = value.charAt(0);
+        const firstTwoDigits = value.substring(0, 2);
+        if (firstDigit === '4') {
+          cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png';
+          cardLogo.style.display = 'block';
+        } else if (firstTwoDigits >= '51' && firstTwoDigits <= '55') {
+          cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png';
+          cardLogo.style.display = 'block';
+        } else {
+          cardLogo.src = '';
+          cardLogo.style.display = 'none';
+        }
+      });
+
+      // Kart üzerindeki isim bilgisini kartta göster
+      cardFullNameInput.addEventListener('input', (e) => {
+        cardNameDisplay.textContent = e.target.value || 'İsim Soyisim';
+      });
+
+      // Son kullanma tarihini biçimlendir ve kartta göster
+      expiryDateInput.addEventListener('input', (e) => {
+        const value = e.target.value.replace(/\s/g, '');
+        let formattedValue = value;
+        if (value.length > 2 && !value.includes('/')) {
+          formattedValue = value.substring(0, 2) + '/' + value.substring(2);
+        }
+        e.target.value = formattedValue;
+        cardExpiryDisplay.textContent = formattedValue || 'AA/YY';
+      });
+
+      // CVV alanına odaklanınca kartı çevir
+      cvvInput.addEventListener('focus', () => {
+        cardVisual.classList.add('is-flipped');
+      });
+
+      cvvInput.addEventListener('blur', () => {
+        cardVisual.classList.remove('is-flipped');
+      });
+
+      // CVV bilgisini kartın arkasında göster
+      cvvInput.addEventListener('input', (e) => {
+        cardCvvDisplay.textContent = e.target.value || '***';
       });
     </script>
 </body></html>
