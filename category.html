@@ -1,180 +1,229 @@
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #11a4d4;
-      }
-      .dark {
-        --bg-color: #111618;
-        --text-color: #f0f3f4;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #2c3e50;
-        --input-bg-color: #1a202c;
-      }
-      .light {
-        --bg-color: #ffffff;
-        --text-color: #111618;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #f0f3f4;
-        --input-bg-color: #f0f3f4;
-      }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Ürünler - MedMar</title>
+    <link rel="icon" href="data:image/x-icon;base64," type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #11a4d4;
+        }
+        .dark {
+            --bg-color: #111618;
+            --text-color: #f0f3f4;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #2c3e50;
+            --input-bg-color: #1a202c;
+        }
+        .light {
+            --bg-color: #ffffff;
+            --text-color: #111618;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #f0f3f4;
+            --input-bg-color: #f0f3f4;
+        }
+        /* Modal için ek stiller */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
     </style>
 </head>
-<body class="light">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
-<div class="flex items-center gap-4 text-[var(--text-color)]">
-<svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
-</div>
-<nav class="flex items-center gap-8">
-<a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
-<a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
-<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Hakkımızda</a>
-<a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0" id="theme-toggle">
-<span class="material-symbols-outlined dark:hidden">light_mode</span>
-<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8nujRuGSqOD7sdKZJ2v618IgFjZWJoQJy4IBhdIlnDtY7DJecqoCp68xtBcSJ0OIIb9q7mt_bBgOhsuAWLAMnxonsfu8XdpzGMVVGTrwMfMtsCbMbEX6t9nOu9qyo9xEjROqfzjcxfC2gpWOiOacUmY-EVOMSP7liMi5CGNeuVoXFJGAe5R-t2JNeIPVQ0DoG_Cw-sDwQpO3NsDTefZ0WabvyrpjXzbxs7CvXkq9uJ9g_BseuftuR4LO3EHCVUiufc1-uiX67fHE");'></div>
-</div>
-</header>
-<main class="px-40 flex flex-1 justify-center py-10 bg-[var(--bg-color)]">
-<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-<h1 class="text-[var(--text-color)] tracking-light text-4xl font-bold leading-tight min-w-72 mb-8">Ürün Yelpazemiz</h1>
-<div class="pb-6">
-<div class="flex border-b border-[var(--border-color)] px-4 gap-8">
-<a class="flex flex-col items-center justify-center border-b-2 border-b-[var(--accent-color)] text-[var(--text-color)] pb-3 pt-2" href="tum-urunler.html">
-<p class="text-base font-semibold leading-normal">Tüm Ürünler</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="cerrahi-malzemeler.html">
-<p class="text-base font-medium leading-normal">Cerrahi Malzemeler</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="hasta-bakim-urunleri.html">
-<p class="text-base font-medium leading-normal">Hasta Bakım Ürünleri</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="ortopedik-urunler.html">
-<p class="text-base font-medium leading-normal">Ortopedik Ürünler</p>
-</a>
-</div>
-</div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 p-4">
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACDOH2viE64sVbLCtS4OlzJwXIeInr_nNiPlqNr67vxI-OeYN1bKVjmP-zXv3_Az03mbf9g-fikqnP65rFLe9MnfLMIID1cPoeko89IKFM457UjinGjEdREePnM2SSPR7KAZXKH7FeAhjpGedrtlTfhqS1puJ7HgJ_XTW7cBj3pqGcY3KwwDa0nV0PbE-gfWuZf_EscyLn9uIk-OXMdyzOKY8KrjZDtS9WPm2zZDHNfQ6dBafiS49J9d7okc-aNjhUKIe-WxAK2i8");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Cerrahi Maske</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Yüksek koruma sağlayan cerrahi maske</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDatJ7qNcysm69lJJgghSUwFZugIU5SSqwT1tiUymZzIcSf6A8I0nPebE0dSHm8u9YxDs5WlX9XrJxmbDDcf3Y_xvX1rzQEEbrNvxeCm1lYTr-P0tK9ilfb5OeFLaqc-mWlGQvMK_pWe2gVpDwJB7DcShuB-ffD3OBwQBdBhFrpe4fT1nAdd7Jwsv1_ELAUlkINnwf1cK-8TKZ2siDgHi7LT2z4DNNGKgpWSkhuSsve7G_N-fQ6pLxySCVKlmMptrfdme2g--4YQjM");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Dezenfektan</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Etkili dezenfektan çözümleri</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCc6TqX2inNGvBIes718Bslxjfg57jSOrrqhVlQ5x8p9A43Bhz96EqvpZ-RWPPJ6a75oCOo2wrZ086_xyIyKvyXqJXRgRXt_q7ATiUsEzO0qjRCyHQ2XKylJ9sWivNQP6EGRw5j-NtfACqLYHRryQJsr-YxJbJ55XrJbH5BW850v-ULkhVYBUx21-oGzbe_JKAceZdm6MrC2o7SNENX7j8t5Yfz5R9ZQfpzl8GN1_oauX_jQioz7qnxH-I7x-4rCp-gWzVydQQOWkQ");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Tekerlekli Sandalye</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Konforlu ve kullanışlı tekerlekli sandalye</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhKuwY8SXZSiW9e4xHDjqUDaXQsi4pmVTK_XmukjqGkAX1FlXJd1kf7UIN76iF6PYWEJufYNF9tmv7GqRC0En6iZozxfAnymW4u-u_WA8z_2GL2B3wRM0EPrmTt2eh60HU-P7hnjmWPVT2xL0p6hZqZ-Jc1Pn-XHW9pzBTMTSsQezdyNrVQMS9hFDodc8x1YC4sVpkH0fXmwNiVTXUHEYwzrf7-z2uNFCuEtB8agTU5OVQ_eRGjEnva1524cJ7RdnMry2fIftvogQ");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Ortopedik Bot</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Ayak bileği için ortopedik bot</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBh9YNyS9XoT3bJVO4tad64q2LNXrdgHV3Tzgfqgogf6X292tcAKCYe02YgsV2Bnbzj3WKqaV_cGlmEfDzYKQXVFjapqyZftZZOVyV_BvhiD_O9zlGoYike4O74xuMY5xZ71YwEC2ih4mzKQ-kYs4FkJ6KDLYG_Sona-klk3_AmFztkcGvRI95UitdgHxaRgGn2kwtAhDGySJOOsCFroOIbil8ptJW5QR4M-oxcR2oehUaPnaCFWrstIhpxTKtN8VYoUc9sMQzNGvQ");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Hasta Yatağı</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Hasta bakımı için hasta yatağı</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCnxi6c-u3hpz5Vj4veUlupvpsvP_JxsQlqX-rKvOdwk5id6yNnVk9JJxDWCuYEj0QRYnTNAsOzg0N90vDfD6VnhuHe3TftedSEUBnHAc66llI33SgNUi6_F919UPH0O_Zp0qK3wpk2YGARMh5DOaqvJTiTV8wCwrW3sjQuGCd4jA64X0WnJRBAPs4Z0kcC7giAsVU9EF_bMT5MEAREPynn4y7EZIkVb6JLwz3HtzYIS-Di34A6uF0dd8E35s14DMRDSQZtYzFaUA");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Yara Bandı</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Yaralar için yara bandı</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3gwJ-l9omhroLmY1xrQDzmhYyFgiM4BLtbeVCc-VGg_WrPwgwYgowUMVN8aBrABj0RhLZ7AD4puQroy1aWwJ-o9kgZEvE4ZhgihQDLEkSZUHDx3cimOBP5EQv_siySny7NGF2aN5GAARord10ZtGS_EHctzo_vZmNIsXnyiDFXrerzy4bXdIj1IWKo0URR58AjJ_EbHksmhmmTQ-qh_gh2j2PII-kNcVzLgA1Qh1OC2yEEUCcJTlNVTFe2Ncak5EibfQjw_IDw_E");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">El Dezenfektanı</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Taşınabilir el dezenfektanı</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-ZVK62mUI86OVcS-vWdzF5Zqv7_xo8FdPdRmNMM_rYeDdMzWWmtHNdLBBFHxqyvePM0dzsOYf4iB5hZ2e2KP_VmkQeS_Q3l_1N98diFY1waIzrhOlEvoOH2prqwsBCurJHWZ99-3-doIxAX5vntkJ_0G79JBrrt9rv-fctwXCoqCFRF4wLpr6oYttX17wWRN2wiwgSjp98gIhaEmGgK8C6FMWqDy1eYfuMWcf2PqfDgQ859cOkFCrBgOGOZcbQM0L2TvRrI8eKQI");'></div>
-<div class="p-4 flex flex-col flex-grow">
-<h3 class="text-[var(--text-color)] text-lg font-semibold leading-normal">Diz Desteği</h3>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Diz için destek</p>
-<a class="w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center" href="product-detail.html">
-                    Detayları İncele
-                  </a>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="flex justify-center border-t border-solid border-t-[var(--border-color)] bg-[var(--bg-color)]">
-<div class="flex max-w-[960px] flex-1 flex-col">
-<footer class="flex flex-col gap-6 px-5 py-8 text-center @container">
-<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 @[480px]:flex-row @[480px]:justify-around">
-<a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Gizlilik Politikası</a>
-<a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Kullanım Koşulları</a>
-<a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">İletişim</a>
-</div>
-<p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal">© 2023 MedMar. Tüm hakları saklıdır.</p>
-</footer>
-</div>
-</footer>
-</div>
-</div>
-<script>
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        body.classList.toggle('light');
-      });
+<body class="light" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-6 md:px-10 py-4 relative z-20">
+                <div class="flex items-center gap-4 text-[var(--text-color)]">
+                    <svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path></svg>
+                    <h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
+                </div>
+                <div class="md:hidden"><button id="menu-toggle" class="text-[var(--text-color)]"><span class="material-symbols-outlined text-3xl">menu</span></button></div>
+                <nav id="menu-links" class="hidden md:flex md:items-center md:gap-8 absolute md:relative top-full left-0 w-full md:w-auto bg-[var(--bg-color)] md:bg-transparent border-b md:border-none border-solid border-[var(--border-color)] p-4 md:p-0">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                        <a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+                        <a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
+                        <a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+                        <a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
+                    </div>
+                </nav>
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold" id="theme-toggle"><span class="material-symbols-outlined dark:hidden">light_mode</span><span class="material-symbols-outlined hidden dark:inline">dark_mode</span></button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8nujRuGSqOD7sdKZJ2v618IgFjZWJoQJy4IBhdIlnDtY7DJecqoCp68xtBcSJ0OIIb9q7mt_bBgOhsuAWLAMnxonsfu8XdpzGMVVGTrwMfMtsCbMbEX6t9nOu9qyo9xEjROqfzjcxfC2gpWOiOacUmY-EVOMSP7liMi5CGNeuVoXFJGAe5R-t2JNeIPVQ0DoG_Cw-sDwQpO3NsDTefZ0WabvyrpjXzbxs7CvXkq9uJ9g_BseuftuR4LO3EHCVUiufc1-uiX67fHE");'></div>
+                </div>
+            </header>
+
+            <main class="flex-1 px-6 md:px-10 lg:px-20 py-10">
+                <div class="max-w-7xl mx-auto">
+                    <h1 class="text-[var(--text-color)] tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-8">Ürün Yelpazemiz</h1>
+                    <div class="pb-6 overflow-x-auto">
+                        <div class="flex border-b border-[var(--border-color)] gap-4 sm:gap-8">
+                            <a class="flex flex-col items-center justify-center shrink-0 border-b-2 border-b-[var(--accent-color)] text-[var(--text-color)] pb-3 pt-2 px-2 sm:px-4" href="tum-urunler.html"><p class="text-base font-semibold leading-normal">Tüm Ürünler</p></a>
+                            <a class="flex flex-col items-center justify-center shrink-0 border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 px-2 sm:px-4 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="cerrahi-malzemeler.html"><p class="text-base font-medium leading-normal">Cerrahi Malzemeler</p></a>
+                            <a class="flex flex-col items-center justify-center shrink-0 border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 px-2 sm:px-4 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="hasta-bakim-urunleri.html"><p class="text-base font-medium leading-normal">Hasta Bakım Ürünleri</p></a>
+                            <a class="flex flex-col items-center justify-center shrink-0 border-b-2 border-b-transparent text-[var(--secondary-text-color)] pb-3 pt-2 px-2 sm:px-4 hover:border-b-[var(--accent-color)] hover:text-[var(--text-color)] transition-colors" href="ortopedik-urunler.html"><p class="text-base font-medium leading-normal">Ortopedik Ürünler</p></a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-6">
+                        
+                        <div class="product-card flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="product-image w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACDOH2viE64sVbLCtS4OlzJwXIeInr_nNiPlqNr67vxI-OeYN1bKVjmP-zXv3_Az03mbf9g-fikqnP65rFLe9MnfLMIID1cPoeko89IKFM457UjinGjEdREePnM2SSPR7KAZXKH7FeAhjpGedrtlTfhqS1puJ7HgJ_XTW7cBj3pqGcY3KwwDa0nV0PbE-gfWuZf_EscyLn9uIk-OXMdyzOKY8KrjZDtS9WPm2zZDHNfQ6dBafiS49J9d7okc-aNjhUKIe-WxAK2i8");'></div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="product-title text-[var(--text-color)] text-lg font-semibold leading-normal">Cerrahi Maske</h3>
+                                <p class="product-description text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Yüksek koruma sağlayan cerrahi maske</p>
+                                <p class="product-price text-[var(--text-color)] text-xl font-bold mt-2">25.00₺</p>
+                                <a class="modal-trigger w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center cursor-pointer" href="product-detail.html">Detayları İncele</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card flex flex-col gap-4 rounded-lg overflow-hidden bg-[var(--input-bg-color)] shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="product-image w-full bg-center bg-no-repeat aspect-square bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCc6TqX2inNGvBIes718Bslxjfg57jSOrrqhVlQ5x8p9A43Bhz96EqvpZ-RWPPJ6a75oCOo2wrZ086_xyIyKvyXqJXRgRXt_q7ATiUsEzO0qjRCyHQ2XKylJ9sWivNQP6EGRw5j-NtfACqLYHRryQJsr-YxJbJ55XrJbH5BW850v-ULkhVYBUx21-oGzbe_JKAceZdm6MrC2o7SNENX7j8t5Yfz5R9ZQfpzl8GN1_oauX_jQioz7qnxH-I7x-4rCp-gWzVydQQOWkQ");'></div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="product-title text-[var(--text-color)] text-lg font-semibold leading-normal">Tekerlekli Sandalye</h3>
+                                <p class="product-description text-[var(--secondary-text-color)] text-sm font-normal leading-normal mt-1 flex-grow">Konforlu ve kullanışlı tekerlekli sandalye</p>
+                                <p class="product-price text-[var(--text-color)] text-xl font-bold mt-2">3,250.00₺</p>
+                                <a class="modal-trigger w-full mt-4 bg-[var(--accent-color)] text-white font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors text-center cursor-pointer" href="product-detail.html">Detayları İncele</a>
+                            </div>
+                        </div>
+                        
+                        </div>
+                </div>
+            </main>
+            
+            <footer class="flex justify-center border-t border-solid border-t-[var(--border-color)] bg-[var(--bg-color)]">
+                <div class="w-full max-w-7xl flex-1 flex-col px-6 md:px-10">
+                    <div class="flex flex-col gap-6 py-8 text-center @container">
+                        <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-around">
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Gizlilik Politikası</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Kullanım Koşulları</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="contact.html">İletişim</a>
+                        </div>
+                        <p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal">© 2023 MedMar. Tüm hakları saklıdır.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal-overlay fixed inset-0 w-full h-full bg-black bg-opacity-60 flex justify-center items-center p-4 z-50 hidden opacity-0">
+        <div class="modal-content bg-[var(--bg-color)] w-full max-w-3xl rounded-lg shadow-2xl relative opacity-0 transform scale-95">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-[var(--secondary-text-color)] hover:text-[var(--text-color)] transition-colors">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+                <div id="modal-image" class="w-full aspect-square bg-cover bg-center bg-no-repeat rounded-lg"></div>
+                <div class="flex flex-col space-y-4 py-4">
+                    <h2 id="modal-title" class="text-2xl md:text-3xl font-bold">Ürün Başlığı</h2>
+                    <p id="modal-description" class="text-[var(--secondary-text-color)] text-base flex-grow">Ürün açıklaması burada yer alacak.</p>
+                    <div class="flex items-baseline space-x-2">
+                        <span id="modal-price" class="text-3xl font-bold">0.00₺</span>
+                    </div>
+                    <button class="w-full mt-4 flex items-center justify-center rounded-lg h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors">
+                        <span class="material-symbols-outlined mr-2">add_shopping_cart</span>
+                        <span class="truncate">Sepete Ekle</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tema Değiştirici
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
+
+        // Mobil Menü
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+        if (menuToggle && menuLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuLinks.classList.toggle('hidden');
+            });
+        }
+
+        // --- MODAL SCRIPT ---
+        const modal = document.getElementById('product-modal');
+        const modalContent = modal.querySelector('.modal-content');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+
+        // Modal'ı açan fonksiyon
+        const openModal = (card) => {
+            // Karttan verileri al
+            const title = card.querySelector('.product-title').innerText;
+            const description = card.querySelector('.product-description').innerText;
+            const price = card.querySelector('.product-price').innerText;
+            const imageUrl = card.querySelector('.product-image').style.backgroundImage;
+
+            // Modal'a verileri yerleştir
+            modal.querySelector('#modal-title').innerText = title;
+            modal.querySelector('#modal-description').innerText = description;
+            modal.querySelector('#modal-price').innerText = price;
+            modal.querySelector('#modal-image').style.backgroundImage = imageUrl;
+
+            // Modal'ı göster
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('opacity-0', 'scale-95');
+            }, 10); // Animasyon için küçük bir gecikme
+             document.body.style.overflow = 'hidden'; // Arka plan kaydırmayı engelle
+        };
+
+        // Modal'ı kapatan fonksiyon
+        const closeModal = () => {
+            modalContent.classList.add('opacity-0', 'scale-95');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Animasyonun bitmesini bekle
+             document.body.style.overflow = 'auto'; // Kaydırmayı geri aç
+        };
+
+        // Her bir ürün kartındaki butona event listener ekle
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (event) => {
+                // Ekran genişliği 768px'den büyükse (md breakpoint) modal'ı aç
+                if (window.innerWidth >= 768) {
+                    event.preventDefault(); // Sayfaya gitmesini engelle
+                    const productCard = trigger.closest('.product-card');
+                    openModal(productCard);
+                }
+                // Küçük ekranlarda ise normal link gibi davranmasına izin ver
+            });
+        });
+
+        // Kapatma butonuna tıklandığında modal'ı kapat
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        // Modal'ın dışına (arka plana) tıklandığında modal'ı kapat
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Escape tuşuna basıldığında modal'ı kapat
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
     </script>
-</body></html>
+</body>
+</html>
