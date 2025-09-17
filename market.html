@@ -1,334 +1,269 @@
-<html><head>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #11a4d4;
-      }
-      .dark {
-        --bg-color: #111618;
-        --text-color: #f0f3f4;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #2c3e50;
-        --input-bg-color: #1a202c;
-      }
-      .light {
-        --bg-color: #ffffff;
-        --text-color: #111618;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #f0f3f4;
-        --input-bg-color: #f0f3f4;
-      }
-
-      /* Kart animasyon stilleri */
-      .card-container {
-        perspective: 1000px;
-        transform-style: preserve-3d;
-      }
-      .card {
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-      }
-      .card.is-flipped {
-        transform: rotateY(180deg);
-      }
-      .card-front, .card-back {
-        backface-visibility: hidden;
-      }
-      .card-back {
-        transform: rotateY(180deg);
-      }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Sipariş Ver - MedMar</title>
+    <link rel="icon" href="data:image/x-icon;base64," type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #11a4d4;
+        }
+        .dark {
+            --bg-color: #111618;
+            --text-color: #f0f3f4;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #2c3e50;
+            --input-bg-color: #1a202c;
+        }
+        .light {
+            --bg-color: #ffffff;
+            --text-color: #111618;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #f0f3f4;
+            --input-bg-color: #f0f3f4;
+        }
+        /* Kart animasyon stilleri */
+        .card-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        .card {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* Safari için */
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
-<body class="light">
-<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden bg-[var(--bg-color)] text-[var(--text-color)]" style='font-family: Inter, "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
-<div class="flex items-center gap-4 text-[var(--text-color)]">
-<svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
-</div>
-<nav class="flex items-center gap-8">
-<a href="home.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
-<a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
-<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Hakkımızda</a>
-<a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0" id="theme-toggle">
-<span class="material-symbols-outlined dark:hidden">light_mode</span>
-<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTDWZLAErzaV30S2T4SjTKnQ9osm0iU--9zxFk-r7xVHZiDfV63mm580zVKjOaJzClSmQ-6u_QSGubLzHN92bYJz_2yY_P7jkcG2a41OWwYrzsAPBzO2Y_eQbpoxUZJ9-0-uw_iOaWylwD6Lx9Z8DAGOAab1zuClk463jQPOQwXFu6nZCkPLHbS_zOL_InphxPZMzcnchn7hKWXAQbkUDXA0-y0fTPWBTZC3t5EGkgGfo9Vt8CsuyqNjl18pI9LVPNbXKifRJgVP8");'></div>
-</div>
-</header>
-<main class="grid flex-1 grid-cols-1 lg:grid-cols-2">
-<section class="bg-[var(--bg-color)] p-8 lg:p-12">
-<div class="max-w-xl mx-auto">
-<h2 class="text-2xl font-bold text-[var(--text-color)] mb-6">Alışveriş Bilgisi</h2>
-<form class="space-y-6">
-<div class="grid grid-cols-1 gap-6">
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="full-name">İsim Soyisim</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="full-name" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="address">Adres</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="address" type="text"/>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="city">Şehir</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="city" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="zip-code">Posta Kodu</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="zip-code" type="text"/>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="country">Ülke</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="country" type="text"/>
-</div>
-</div>
-<h2 class="text-2xl font-bold text-[var(--text-color)] pt-6">Ödeme Şekli</h2>
-<div class="space-y-4">
-<label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
-<input checked="" class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg viewBox=\'0 0 16 16\' fill=\'rgb(17,163,212)\' xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle cx=\'8\' cy=\'8\' r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" id="credit-card-radio" type="radio"/>
-<span class="text-[var(--text-color)] text-sm font-medium">Kredi Kartı</span>
-</label>
-<label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
-<input class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg viewBox=\'0 0 16 16\' fill=\'rgb(17,163,212)\' xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle cx=\'8\' cy=\'8\' r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[var(--accent-color)]" name="payment-method" id="wire-transfer-radio" type="radio"/>
-<span class="text-[var(--text-color)] text-sm font-medium">Havale</span>
-</label>
-</div>
-<div id="credit-card-section">
-<div class="card-container h-56 w-96 mx-auto mb-6">
-<div id="card-visual" class="card relative h-full w-full rounded-xl shadow-lg bg-gradient-to-br from-gray-200 to-gray-500 text-white">
-<div class="card-front absolute inset-0 p-6 flex flex-col justify-between">
-<div class="flex justify-end">
-<img id="card-logo" class="w-12 h-12" src="" alt="" style="display: none;"/>
-</div>
-<div>
-<p id="card-number-display" class="text-2xl font-mono tracking-widest mt-8">
-**** **** **** ****
-</p>
-</div>
-<div class="flex justify-between items-center text-sm font-light">
-<p id="card-name-display">İsim Soyisim</p>
-<p id="card-expiry-display">AA/YY</p>
-</div>
-</div>
-<div class="card-back absolute inset-0 p-6 flex flex-col justify-center items-end bg-gradient-to-br from-gray-500 to-gray-800 rounded-xl">
-<div class="h-10 w-full bg-black my-4"></div>
-<p class="text-sm">CVV</p>
-<p id="card-cvv-display" class="text-lg font-mono tracking-widest mt-1">***</p>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-6 pt-6">
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-full-name">Kart Üzerindeki İsim</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="card-full-name" placeholder="Kart üzerindeki tam ad" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-number">Kart Numarası</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="card-number" placeholder="Enter card number" type="text" maxlength="19"/>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="expiry-date">Son Kullanma Tarihi</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="expiry-date" placeholder="MM/YY" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="cvv">CVV</label>
-<input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)] placeholder:text-[var(--secondary-text-color)]" id="cvv" placeholder="123" type="text"/>
-</div>
-</div>
-</div>
-</div>
-<div id="wire-transfer-section" class="hidden pt-6">
-<div class="bg-[var(--input-bg-color)] p-6 rounded-lg border border-[var(--border-color)] space-y-4">
-<h3 class="text-xl font-bold">Banka Hesap Bilgileri</h3>
-<p class="text-[var(--secondary-text-color)]">Lütfen sipariş tutarını aşağıdaki hesaba havale veya EFT yoluyla gönderin.</p>
-<div>
-<p class="text-sm font-medium">Banka Adı:</p>
-<p class="font-semibold">Örnek Bankası A.Ş.</p>
-</div>
-<div>
-<p class="text-sm font-medium">Şube Adı:</p>
-<p class="font-semibold">Merkez Şube</p>
-</div>
-<div>
-<p class="text-sm font-medium">IBAN:</p>
-<p class="font-semibold text-[var(--accent-color)]">TR98 0000 0000 0000 0000 0000 00</p>
-</div>
-<div>
-<p class="text-sm font-medium">Hesap Sahibi:</p>
-<p class="font-semibold">MedMar Sağlık Ürünleri A.Ş.</p>
-</div>
-</div>
-</div>
-</form>
-</div>
-</section>
-<aside class="bg-[var(--input-bg-color)] p-8 lg:p-12">
-<div class="max-w-xl mx-auto">
-<h2 class="text-2xl font-bold text-[var(--text-color)] mb-6">Sipariş Özeti</h2>
-<div class="space-y-4">
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVtRxDXEeSAvz1O-mpmPHZNuQVFwZQDCW5sz1t0EUgkZup_92RFTSWG2nWO-MPL0tALdH7f2zqSbAtz98UQuZHySHlhOpXFWGahzBDjqTiQd6khjiGY1bkAi8I-C5ZaLQxPlH6dCNu2Cmi24nMpeUnSJ4TbY6d46Zebg6FJzSqNrtC28NkuJrLrioCJ6V0bo95ETuuzrq5xDy0vBRk3xLp0KU3f3iQRD4zbXkViD2xHm4l3jWB8Z04XHiR3y430MMZSuzrPhLf7Ls");'></div>
-<div class="flex-1">
-<p class="text-[var(--text-color)] font-medium">İlk Yardım Kiti</p>
-<p class="text-[var(--secondary-text-color)] text-sm">Adet: 2</p>
-</div>
-<p class="text-[var(--text-color)] font-medium">220.00₺</p>
-</div>
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOukb0Mff-lkKURb3o1opkitQqvrH6_J9CrhxV4Kp20Ki_-P3SpyYiW2RbdtyshIOHow1RnvH44dvvh1s9CBQQf_MEwNboBmoOuJMgukTdRQURZijlN-wIaEyORrKJQlSsMT6aqheFBp-GfKIjBxlrMxkcRfeNV2RliRWZTjJ8U1kOFmFpmkLOv8LP8hLiTpj-O1Y3oAPWk3iuyBUsVvolTSrMQM3FQoNt1NGl7RL0zIK1fjhH1UDN-CuVwnez7mHDo78Dxz-RTk0");'></div>
-<div class="flex-1">
-<p class="text-[var(--text-color)] font-medium">Dijital Termometre</p>
-<p class="text-[var(--secondary-text-color)] text-sm">Adet: 1</p>
-</div>
-<p class="text-[var(--text-color)] font-medium">175.00₺</p>
-</div>
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3mY3ZkTdpv5sPr2u2Xz6pno2YjJ3PCaaqnz_-iittET57jHEY48x1oUO4H6MAmnBgoqPwHgwyY8J3g7jRAMJZnFGW1Hk5lhAenD-gTKSkFJSD3PGRo3P8Ame1471LLIS-z76Z9jrCV-H30PWghWI3LZrHQUKBsuPMFpqIwRz8jVhTHivEb8J-5i_5YU30UPyAhKa9mt49PVxbtC5e6-PSONsbL1U_q7jvc0yKa7HVnXkXz5k8NjvLMgbuxPasj0jetlgXAb_YX1s");'></div>
-<div class="flex-1">
-<p class="text-[var(--text-color)] font-medium">Ağrı Kesici Tablet</p>
-<p class="text-[var(--secondary-text-color)] text-sm">Adet: 3</p>
-</div>
-<p class="text-[var(--text-color)] font-medium">410.00₺</p>
-</div>
-</div>
-<div class="border-t border-[var(--border-color)] my-8"></div>
-<div class="space-y-2">
-<div class="flex justify-between">
-<p class="text-[var(--secondary-text-color)]">Toplam</p>
-<p class="text-[var(--text-color)] font-medium">805.00₺</p>
-</div>
-<div class="flex justify-between">
-<p class="text-[var(--secondary-text-color)]">Kargo</p>
-<p class="text-[var(--text-color)] font-medium">45.00₺</p>
-</div>
-<div class="flex justify-between">
-<p class="text-[var(--secondary-text-color)]">Vergi</p>
-<p class="text-[var(--text-color)] font-medium">72.50₺</p>
-</div>
-</div>
-<div class="border-t border-[var(--border-color)] my-8"></div>
-<div class="flex justify-between font-bold text-lg">
-<p class="text-[var(--text-color)]">Total</p>
-<p class="text-[var(--text-color)]">922.50₺</p>
-</div>
-<button class="mt-8 w-full bg-[var(--accent-color)] text-white font-bold py-3 px-4 rounded-md hover:bg-opacity-90 transition-colors">
-                Sipariş Ver
-              </button>
-</div>
-</aside>
-</main>
-</div>
-</div>
-<script>
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        body.classList.toggle('light');
-      });
+<body class="light" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
 
-      const creditCardRadio = document.getElementById('credit-card-radio');
-      const wireTransferRadio = document.getElementById('wire-transfer-radio');
-      const creditCardSection = document.getElementById('credit-card-section');
-      const wireTransferSection = document.getElementById('wire-transfer-section');
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-6 md:px-10 py-4 relative z-10">
+                <div class="flex items-center gap-4 text-[var(--text-color)]">
+                    <svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path></svg>
+                    <h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
+                </div>
+                <div class="md:hidden"><button id="menu-toggle" class="text-[var(--text-color)]"><span class="material-symbols-outlined text-3xl">menu</span></button></div>
+                <nav id="menu-links" class="hidden md:flex md:items-center md:gap-8 absolute md:relative top-full left-0 w-full md:w-auto bg-[var(--bg-color)] md:bg-transparent border-b md:border-none border-solid border-[var(--border-color)] p-4 md:p-0">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                        <a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+                        <a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
+                        <a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+                        <a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
+                    </div>
+                </nav>
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold" id="theme-toggle">
+                        <span class="material-symbols-outlined dark:hidden">light_mode</span>
+                        <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+                    </button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTDWZLAErzaV30S2T4SjTKnQ9osm0iU--9zxFk-r7xVHZiDfV63mm580zVKjOaJzClSmQ-6u_QSGubLzHN92bYJz_2yY_P7jkcG2a41OWwYrzsAPBzO2Y_eQbpoxUZJ9-0-uw_iOaWylwD6Lx9Z8DAGOAab1zuClk463jQPOQwXFu6nZCkPLHbS_zOL_InphxPZMzcnchn7hKWXAQbkUDXA0-y0fTPWBTZC3t5EGkgGfo9Vt8CsuyqNjl18pI9LVPNbXKifRJgVP8");'></div>
+                </div>
+            </header>
 
-      const cardFullNameInput = document.getElementById('card-full-name');
-      const cardNumberInput = document.getElementById('card-number');
-      const expiryDateInput = document.getElementById('expiry-date');
-      const cvvInput = document.getElementById('cvv');
-      const cardVisual = document.getElementById('card-visual');
-      const cardLogo = document.getElementById('card-logo');
+            <main class="flex flex-1 flex-col lg:flex-row">
+                <section class="w-full lg:w-3/5 bg-[var(--bg-color)] p-6 sm:p-8 lg:p-12">
+                    <div class="max-w-xl mx-auto">
+                        <h2 class="text-2xl font-bold text-[var(--text-color)] mb-6">Alışveriş Bilgisi</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="full-name">İsim Soyisim</label>
+                                    <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="full-name" type="text" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="address">Adres</label>
+                                    <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="address" type="text" />
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="city">Şehir</label>
+                                        <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="city" type="text" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="zip-code">Posta Kodu</label>
+                                        <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)] focus:ring-[var(--accent-color)] focus:border-[var(--accent-color)]" id="zip-code" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl font-bold text-[var(--text-color)] pt-6">Ödeme Şekli</h2>
+                            <div class="space-y-4">
+                                <label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
+                                    <input checked name="payment-method" id="credit-card-radio" type="radio" class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg_viewBox=\'0_0_16_16\'_fill=\'rgb(17,163,212)\'_xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle_cx=\'8\'_cy=\'8\'_r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0" />
+                                    <span class="text-[var(--text-color)] text-sm font-medium">Kredi Kartı</span>
+                                </label>
+                                <label class="flex items-center gap-4 rounded-lg border border-solid border-[var(--border-color)] p-4 has-[:checked]:border-[var(--accent-color)] has-[:checked]:ring-2 has-[:checked]:ring-[var(--accent-color)]">
+                                    <input name="payment-method" id="wire-transfer-radio" type="radio" class="h-5 w-5 border-2 border-[var(--border-color)] bg-transparent text-transparent checked:border-[var(--accent-color)] checked:bg-[image:url('data:image/svg+xml,%3csvg_viewBox=\'0_0_16_16\'_fill=\'rgb(17,163,212)\'_xmlns=\'http://www.w3.org/2000/svg\'%3e%3ccircle_cx=\'8\'_cy=\'8\'_r=\'3\'/%3e%3c/svg%3e')] focus:outline-none focus:ring-0 focus:ring-offset-0" />
+                                    <span class="text-[var(--text-color)] text-sm font-medium">Havale</span>
+                                </label>
+                            </div>
+                            <div id="credit-card-section">
+                                <div class="card-container h-56 w-full max-w-sm mx-auto my-6">
+                                    <div id="card-visual" class="card relative h-full w-full rounded-xl shadow-lg bg-gradient-to-br from-gray-200 to-gray-500 text-white">
+                                        <div class="card-front absolute inset-0 p-6 flex flex-col justify-between">
+                                            <div class="flex justify-end"><img id="card-logo" class="w-12 h-auto" src="" alt="" style="display: none;"/></div>
+                                            <div><p id="card-number-display" class="text-xl sm:text-2xl font-mono tracking-wider">**** **** **** ****</p></div>
+                                            <div class="flex justify-between items-center text-sm"><p id="card-name-display">İsim Soyisim</p><p id="card-expiry-display">AA/YY</p></div>
+                                        </div>
+                                        <div class="card-back absolute inset-0 p-6 flex flex-col justify-center items-end bg-gradient-to-br from-gray-500 to-gray-800 rounded-xl">
+                                            <div class="h-10 w-full bg-black my-4"></div>
+                                            <p class="text-sm">CVV</p><p id="card-cvv-display" class="text-lg font-mono tracking-widest mt-1">***</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 gap-6 pt-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-full-name">Kart Üzerindeki İsim</label>
+                                        <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)]" id="card-full-name" type="text" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="card-number">Kart Numarası</label>
+                                        <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)]" id="card-number" type="tel" inputmode="numeric" pattern="[\d ]{16,19}" maxlength="19" placeholder="0000 0000 0000 0000" />
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="expiry-date">Son Kullanma Tarihi</label>
+                                            <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)]" id="expiry-date" type="tel" inputmode="numeric" placeholder="AA/YY" />
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-[var(--text-color)] mb-2" for="cvv">CVV</label>
+                                            <input class="form-input w-full rounded-md border-[var(--border-color)] bg-[var(--input-bg-color)] text-[var(--text-color)]" id="cvv" type="tel" inputmode="numeric" pattern="\d{3,4}" maxlength="4" placeholder="123" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="wire-transfer-section" class="hidden pt-6">
+                                <div class="bg-[var(--input-bg-color)] p-6 rounded-lg border border-[var(--border-color)] space-y-4">
+                                    <h3 class="text-xl font-bold">Banka Hesap Bilgileri</h3>
+                                    <p class="text-[var(--secondary-text-color)]">Lütfen sipariş tutarını aşağıdaki hesaba havale veya EFT yoluyla gönderin.</p>
+                                    <div><p class="text-sm font-medium">Banka Adı:</p><p class="font-semibold">Örnek Bankası A.Ş.</p></div>
+                                    <div><p class="text-sm font-medium">IBAN:</p><p class="font-semibold text-[var(--accent-color)] break-all">TR98 0000 0000 0000 0000 0000 00</p></div>
+                                    <div><p class="text-sm font-medium">Hesap Sahibi:</p><p class="font-semibold">MedMar Sağlık Ürünleri A.Ş.</p></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 
-      const cardNumberDisplay = document.getElementById('card-number-display');
-      const cardNameDisplay = document.getElementById('card-name-display');
-      const cardExpiryDisplay = document.getElementById('card-expiry-display');
-      const cardCvvDisplay = document.getElementById('card-cvv-display');
-      const fullNameInput = document.getElementById('full-name');
+                <aside class="w-full lg:w-2/5 bg-[var(--input-bg-color)] p-6 sm:p-8 lg:p-12 border-t lg:border-t-0 lg:border-l border-[var(--border-color)]">
+                    <div class="max-w-xl mx-auto">
+                        <h2 class="text-2xl font-bold text-[var(--text-color)] mb-6">Sipariş Özeti</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4"><div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVtRxDXEeSAvz1O-mpmPHZNuQVFwZQDCW5sz1t0EUgkZup_92RFTSWG2nWO-MPL0tALdH7f2zqSbAtz98UQuZHySHlhOpXFWGahzBDjqTiQd6khjiGY1bkAi8I-C5ZaLQxPlH6dCNu2Cmi24nMpeUnSJ4TbY6d46Zebg6FJzSqNrtC28NkuJrLrioCJ6V0bo95ETuuzrq5xDy0vBRk3xLp0KU3f3iQRD4zbXkViD2xHm4l3jWB8Z04XHiR3y430MMZSuzrPhLf7Ls");'></div><div class="flex-1"><p class="font-medium">İlk Yardım Kiti</p><p class="text-sm">Adet: 2</p></div><p class="font-medium">220.00₺</p></div>
+                            <div class="flex items-center gap-4"><div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOukb0Mff-lkKURb3o1opkitQqvrH6_J9CrhxV4Kp20Ki_-P3SpyYiW2RbdtyshIOHow1RnvH44dvvh1s9CBQQf_MEwNboBmoOuJMgukTdRQURZijlN-wIaEyORrKJQlSsMT6aqheFBp-GfKIjBxlrMxkcRfeNV2RliRWZTjJ8U1kOFmFpmkLOv8LP8hLiTpj-O1Y3oAPWk3iuyBUsVvolTSrMQM3FQoNt1NGl7RL0zIK1fjhH1UDN-CuVwnez7mHDo78Dxz-RTk0");'></div><div class="flex-1"><p class="font-medium">Dijital Termometre</p><p class="text-sm">Adet: 1</p></div><p class="font-medium">175.00₺</p></div>
+                            <div class="flex items-center gap-4"><div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3mY3ZkTdpv5sPr2u2Xz6pno2YjJ3PCaaqnz_-iittET57jHEY48x1oUO4H6MAmnBgoqPwHgwyY8J3g7jRAMJZnFGW1Hk5lhAenD-gTKSkFJSD3PGRo3P8Ame1471LLIS-z76Z9jrCV-H30PWghWI3LZrHQUKBsuPMFpqIwRz8jVhTHivEb8J-5i_5YU30UPyAhKa9mt49PVxbtC5e6-PSONsbL1U_q7jvc0yKa7HVnXkXz5k8NjvLMgbuxPasj0jetlgXAb_YX1s");'></div><div class="flex-1"><p class="font-medium">Ağrı Kesici Tablet</p><p class="text-sm">Adet: 3</p></div><p class="font-medium">410.00₺</p></div>
+                        </div>
+                        <div class="border-t border-[var(--border-color)] my-8"></div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><p>Toplam</p><p class="font-medium">805.00₺</p></div>
+                            <div class="flex justify-between"><p>Kargo</p><p class="font-medium">45.00₺</p></div>
+                            <div class="flex justify-between"><p>Vergi</p><p class="font-medium">72.50₺</p></div>
+                        </div>
+                        <div class="border-t border-[var(--border-color)] my-8"></div>
+                        <div class="flex justify-between font-bold text-lg"><p>Total</p><p>922.50₺</p></div>
+                        <button class="mt-8 w-full bg-[var(--accent-color)] text-white font-bold py-3 px-4 rounded-md hover:bg-opacity-90 transition-colors">Sipariş Ver</button>
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+    <script>
+        // Tema Değiştirici
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
 
-
-      creditCardRadio.addEventListener('change', () => {
-        if (creditCardRadio.checked) {
-          creditCardSection.classList.remove('hidden');
-          wireTransferSection.classList.add('hidden');
+        // Mobil Menü
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+        if (menuToggle && menuLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuLinks.classList.toggle('hidden');
+            });
         }
-      });
 
-      wireTransferRadio.addEventListener('change', () => {
-        if (wireTransferRadio.checked) {
-          wireTransferSection.classList.remove('hidden');
-          creditCardSection.classList.add('hidden');
-        }
-      });
+        // --- Ödeme Formu Scriptleri ---
+        const creditCardRadio = document.getElementById('credit-card-radio');
+        const wireTransferRadio = document.getElementById('wire-transfer-radio');
+        const creditCardSection = document.getElementById('credit-card-section');
+        const wireTransferSection = document.getElementById('wire-transfer-section');
 
-      // Kart numarasını biçimlendir ve kartta göster
-      cardNumberInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\s/g, '').substring(0, 16);
-        const formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
-        e.target.value = formattedValue;
-        cardNumberDisplay.textContent = formattedValue || '**** **** **** ****';
+        const cardFullNameInput = document.getElementById('card-full-name');
+        const cardNumberInput = document.getElementById('card-number');
+        const expiryDateInput = document.getElementById('expiry-date');
+        const cvvInput = document.getElementById('cvv');
+        const cardVisual = document.getElementById('card-visual');
+        const cardLogo = document.getElementById('card-logo');
 
-        // Kart logosunu göster/gizle
-        const firstDigit = value.charAt(0);
-        const firstTwoDigits = value.substring(0, 2);
-        if (firstDigit === '4') {
-          cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png';
-          cardLogo.style.display = 'block';
-        } else if (firstTwoDigits >= '51' && firstTwoDigits <= '55') {
-          cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png';
-          cardLogo.style.display = 'block';
-        } else {
-          cardLogo.src = '';
-          cardLogo.style.display = 'none';
-        }
-      });
+        const cardNumberDisplay = document.getElementById('card-number-display');
+        const cardNameDisplay = document.getElementById('card-name-display');
+        const cardExpiryDisplay = document.getElementById('card-expiry-display');
+        const cardCvvDisplay = document.getElementById('card-cvv-display');
 
-      // Kart üzerindeki isim bilgisini kartta göster
-      cardFullNameInput.addEventListener('input', (e) => {
-        cardNameDisplay.textContent = e.target.value || 'İsim Soyisim';
-      });
-
-      // Son kullanma tarihini biçimlendir ve kartta göster
-      expiryDateInput.addEventListener('input', (e) => {
-        const value = e.target.value.replace(/\s/g, '');
-        let formattedValue = value;
-        if (value.length > 2 && !value.includes('/')) {
-          formattedValue = value.substring(0, 2) + '/' + value.substring(2);
-        }
-        e.target.value = formattedValue;
-        cardExpiryDisplay.textContent = formattedValue || 'AA/YY';
-      });
-
-      // CVV alanına odaklanınca kartı çevir
-      cvvInput.addEventListener('focus', () => {
-        cardVisual.classList.add('is-flipped');
-      });
-
-      cvvInput.addEventListener('blur', () => {
-        cardVisual.classList.remove('is-flipped');
-      });
-
-      // CVV bilgisini kartın arkasında göster
-      cvvInput.addEventListener('input', (e) => {
-        cardCvvDisplay.textContent = e.target.value || '***';
-      });
+        creditCardRadio.addEventListener('change', () => {
+            if (creditCardRadio.checked) {
+                creditCardSection.classList.remove('hidden');
+                wireTransferSection.classList.add('hidden');
+            }
+        });
+        wireTransferRadio.addEventListener('change', () => {
+            if (wireTransferRadio.checked) {
+                wireTransferSection.classList.remove('hidden');
+                creditCardSection.classList.add('hidden');
+            }
+        });
+        cardNumberInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '').substring(0, 16);
+            e.target.value = value.replace(/(\d{4})/g, '$1 ').trim();
+            cardNumberDisplay.textContent = e.target.value || '**** **** **** ****';
+            
+            const firstDigit = value.charAt(0);
+            if (firstDigit === '4') {
+                cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png';
+                cardLogo.style.display = 'block';
+            } else if (value.substring(0, 2) >= '51' && value.substring(0, 2) <= '55') {
+                cardLogo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png';
+                cardLogo.style.display = 'block';
+            } else {
+                cardLogo.src = '';
+                cardLogo.style.display = 'none';
+            }
+        });
+        cardFullNameInput.addEventListener('input', (e) => {
+            cardNameDisplay.textContent = e.target.value || 'İsim Soyisim';
+        });
+        expiryDateInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/[^\d]/g, '').substring(0, 4);
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
+            e.target.value = value;
+            cardExpiryDisplay.textContent = value || 'AA/YY';
+        });
+        cvvInput.addEventListener('focus', () => cardVisual.classList.add('is-flipped'));
+        cvvInput.addEventListener('blur', () => cardVisual.classList.remove('is-flipped'));
+        cvvInput.addEventListener('input', (e) => {
+            cardCvvDisplay.textContent = e.target.value || '***';
+        });
     </script>
-</body></html>
+</body>
+</html>
