@@ -1,125 +1,130 @@
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>MEDMAR</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #11a4d4;
-      }
-      .dark {
-        --bg-color: #111618;
-        --text-color: #f0f3f4;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #2c3e50;
-        --input-bg-color: #1a202c;
-      }
-      .light {
-        --bg-color: #ffffff;
-        --text-color: #111618;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #f0f3f4;
-        --input-bg-color: #f0f3f4;
-      }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>İletişim - MedMar</title>
+    <link rel="icon" href="data:image/x-icon;base64," type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #11a4d4;
+        }
+        .dark {
+            --bg-color: #111618;
+            --text-color: #f0f3f4;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #2c3e50;
+            --input-bg-color: #1a202c;
+        }
+        .light {
+            --bg-color: #ffffff;
+            --text-color: #111618;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #f0f3f4;
+            --input-bg-color: #f0f3f4;
+        }
     </style>
 </head>
-<body class="light">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
-<div class="flex items-center gap-4 text-[var(--text-color)]">
-<svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
-</div>
-<nav class="flex items-center gap-8">
-<a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
-<a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
-<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
-<a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0" id="theme-toggle">
-<span class="material-symbols-outlined dark:hidden">light_mode</span>
-<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIu0M7YlURLN_eFeq3Am-lzlUkuiROZpJB3yamWrShbZaCFAtjO6_44_fOM9YuuqoSUbCMvsOs9Ih_4Y_fCCM2uHNdQvUlB0kif3E28X1j80amCac82OqbtenUYjBKEkQGceQThvOY9gZCTHY0kZSzjOZN5_OTyNZyJZfA7tmB7rQtBpI8Y-op6ze0gnKMdEQ5_SYmij7lTKPa5oio2vmXUzVeE1CgFn9GxzTAk47-2feS_vCJh9529N-tuuqRuU1cGgchyH2YJUo");'></div>
-</div>
-</header>
-<main class="px-40 flex flex-1 justify-center py-16">
-<div class="flex w-full max-w-5xl gap-16">
-<div class="flex-1 space-y-8">
-<div class="space-y-2">
-<h2 class="text-4xl font-bold tracking-tight">Bizimle İletişime Geçin</h2>
-<p class="text-[var(--secondary-text-color)] text-base">Sorularınız, geri bildirimleriniz veya destek talepleriniz için buradayız. Aşağıdaki formu doldurun, size en kısa sürede geri döneceğiz.</p>
-</div>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex flex-col">
-<label class="mb-2 font-medium" for="name">Adınız</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal leading-normal" id="name" placeholder="Adınız" value=""/>
-</div>
-<div class="flex flex-col">
-<label class="mb-2 font-medium" for="email">E-posta Adresiniz</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal leading-normal" id="email" placeholder="E-posta adresiniz" type="email" value=""/>
-</div>
-</div>
-<div class="flex flex-col">
-<label class="mb-2 font-medium" for="subject">Konu</label>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal leading-normal" id="subject" placeholder="Konu" value=""/>
-</div>
-<div class="flex flex-col">
-<label class="mb-2 font-medium" for="message">Mesajınız</label>
-<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] min-h-36 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal leading-normal" id="message" placeholder="Mesajınız"></textarea>
-</div>
-<div class="flex justify-end">
-<button class="flex min-w-[120px] items-center justify-center rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold leading-normal tracking-wide hover:bg-opacity-90 transition-colors" type="submit">
-<span class="truncate">Gönder</span>
-</button>
-</div>
-</form>
-</div>
-<aside class="w-1/3 space-y-8 rounded-lg bg-[var(--input-bg-color)] p-8">
-<div>
-<h3 class="text-xl font-bold mb-4">Canlı Destek</h3>
-<p class="text-[var(--secondary-text-color)] mb-4">Anında yardıma mı ihtiyacınız var? Canlı yardım ekibimizle sohbet edin.</p>
-<a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="live-chat.html">
-<span class="material-symbols-outlined">chat</span>
-<span class="truncate">Canlı Yardım Başlat</span>
-</a>
-</div>
-<div class="border-t border-[var(--border-color)]"></div>
-<div>
-<h3 class="text-xl font-bold mb-4">WhatsApp</h3>
-<p class="text-[var(--secondary-text-color)] mb-4">Bize WhatsApp üzerinden de ulaşabilirsiniz.</p>
-<div class="flex flex-col space-y-3">
-<a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#25D366] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="tel:+905418043577">
-<span class="material-symbols-outlined">call</span>
-<span class="truncate">Şimdi Ara</span>
-</a>
-<a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#25D366] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="https://wa.me/905418043577" target="_blank">
-<span class="material-symbols-outlined">message</span>
-<span class="truncate">Mesaj Gönder</span>
-</a>
-</div>
-</div>
-</aside>
-</div>
-</main>
-</div>
-</div>
-<script>
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        body.classList.toggle('light');
-      });
+<body class="light" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-6 md:px-10 py-4 relative z-10">
+                <div class="flex items-center gap-4 text-[var(--text-color)]">
+                    <svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path></svg>
+                    <h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
+                </div>
+                <div class="md:hidden"><button id="menu-toggle" class="text-[var(--text-color)]"><span class="material-symbols-outlined text-3xl">menu</span></button></div>
+                <nav id="menu-links" class="hidden md:flex md:items-center md:gap-8 absolute md:relative top-full left-0 w-full md:w-auto bg-[var(--bg-color)] md:bg-transparent border-b md:border-none border-solid border-[var(--border-color)] p-4 md:p-0">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                        <a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+                        <a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
+                        <a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+                        <a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
+                    </div>
+                </nav>
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold" id="theme-toggle"><span class="material-symbols-outlined dark:hidden">light_mode</span><span class="material-symbols-outlined hidden dark:inline">dark_mode</span></button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIu0M7YlURLN_eFeq3Am-lzlUkuiROZpJB3yamWrShbZaCFAtjO6_44_fOM9YuuqoSUbCMvsOs9Ih_4Y_fCCM2uHNdQvUlB0kif3E28X1j80amCac82OqbtenUYjBKEkQGceQThvOY9gZCTHY0kZSzjOZN5_OTyNZyJZfA7tmB7rQtBpI8Y-op6ze0gnKMdEQ5_SYmij7lTKPa5oio2vmXUzVeE1CgFn9GxzTAk47-2feS_vCJh9529N-tuuqRuU1cGgchyH2YJUo");'></div>
+                </div>
+            </header>
+
+            <main class="flex-1 px-6 md:px-10 py-10 md:py-16 flex justify-center items-center">
+                <div class="w-full max-w-5xl">
+                    <div class="flex flex-col lg:flex-row w-full gap-10 lg:gap-16">
+                        <div class="flex-1 space-y-8">
+                            <div class="space-y-2">
+                                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Bizimle İletişime Geçin</h2>
+                                <p class="text-[var(--secondary-text-color)] text-base">Sorularınız, geri bildirimleriniz veya destek talepleriniz için buradayız. Aşağıdaki formu doldurun, size en kısa sürede geri döneceğiz.</p>
+                            </div>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="flex flex-col"><label class="mb-2 font-medium" for="name">Adınız</label><input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal" id="name" placeholder="Adınız" /></div>
+                                    <div class="flex flex-col"><label class="mb-2 font-medium" for="email">E-posta Adresiniz</label><input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal" id="email" placeholder="E-posta adresiniz" type="email" /></div>
+                                </div>
+                                <div class="flex flex-col"><label class="mb-2 font-medium" for="subject">Konu</label><input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] h-12 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal" id="subject" placeholder="Konu" /></div>
+                                <div class="flex flex-col"><label class="mb-2 font-medium" for="message">Mesajınız</label><textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-[var(--text-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] border border-[var(--border-color)] bg-[var(--input-bg-color)] min-h-36 placeholder:text-[var(--secondary-text-color)] p-3 text-base font-normal" id="message" placeholder="Mesajınız"></textarea></div>
+                                <div class="flex justify-end"><button class="flex min-w-[120px] items-center justify-center rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold tracking-wide hover:bg-opacity-90 transition-colors" type="submit"><span class="truncate">Gönder</span></button></div>
+                            </form>
+                        </div>
+                        <aside class="w-full lg:w-1/3 space-y-8 rounded-lg bg-[var(--input-bg-color)] p-6 lg:p-8 self-start">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">Canlı Destek</h3>
+                                <p class="text-[var(--secondary-text-color)] mb-4">Anında yardıma mı ihtiyacınız var? Canlı yardım ekibimizle sohbet edin.</p>
+                                <a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="live-chat.html"><span class="material-symbols-outlined">chat</span><span class="truncate">Canlı Yardım Başlat</span></a>
+                            </div>
+                            <div class="border-t border-[var(--border-color)]"></div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4">WhatsApp</h3>
+                                <p class="text-[var(--secondary-text-color)] mb-4">Bize WhatsApp üzerinden de ulaşabilirsiniz.</p>
+                                <div class="flex flex-col space-y-3">
+                                    <a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#25D366] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="tel:+905418043577"><span class="material-symbols-outlined">call</span><span class="truncate">Şimdi Ara</span></a>
+                                    <a class="flex w-full items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#25D366] text-white text-base font-bold leading-normal hover:bg-opacity-90 transition-colors" href="https://wa.me/905418043577" target="_blank"><span class="material-symbols-outlined">message</span><span class="truncate">Mesaj Gönder</span></a>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </main>
+            
+            <footer class="flex justify-center border-t border-solid border-t-[var(--border-color)] bg-[var(--bg-color)]">
+                <div class="w-full max-w-7xl flex-1 flex-col px-6 md:px-10">
+                    <div class="flex flex-col gap-6 py-8 text-center @container">
+                        <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-around">
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Gizlilik Politikası</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Kullanım Koşulları</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="contact.html">İletişim</a>
+                        </div>
+                        <p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal">© 2023 MedMar. Tüm hakları saklıdır.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Tema Değiştirici
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
+
+        // Mobil Menü
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+        if (menuToggle && menuLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuLinks.classList.toggle('hidden');
+            });
+        }
     </script>
-</body></html>
+</body>
+</html>
