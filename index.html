@@ -1,121 +1,155 @@
 <!DOCTYPE html>
-<html lang="tr"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>MedMar - Medikal Market</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #11a4d4;
-      }
-      .dark {
-        --bg-color: #111618;
-        --text-color: #f0f3f4;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #2c3e50;
-        --input-bg-color: #1a202c;
-      }
-      .light {
-        --bg-color: #ffffff;
-        --text-color: #111618;
-        --secondary-text-color: #617f89;
-        --accent-color: #11a3d4;
-        --border-color: #f0f3f4;
-        --input-bg-color: #f0f3f4;
-      }
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>MedMar - Medikal Market</title>
+    <link rel="icon" href="data:image/x-icon;base64," type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #11a4d4;
+        }
+        .dark {
+            --bg-color: #111618;
+            --text-color: #f0f3f4;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #2c3e50;
+            --input-bg-color: #1a202c;
+        }
+        .light {
+            --bg-color: #ffffff;
+            --text-color: #111618;
+            --secondary-text-color: #617f89;
+            --accent-color: #11a3d4;
+            --border-color: #f0f3f4;
+            --input-bg-color: #f0f3f4;
+        }
     </style>
 </head>
 <body class="light" style='font-family: Inter, "Noto Sans", sans-serif;'>
-<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden bg-[var(--bg-color)] text-[var(--text-color)]">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-10 py-4">
-<div class="flex items-center gap-4 text-[var(--text-color)]">
-<svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
-</div>
-<nav class="flex items-center gap-8">
-<a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
-<a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
-<a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
-<a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0" id="theme-toggle">
-<span class="material-symbols-outlined dark:hidden">light_mode</span>
-<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTDWZLAErzaV30S2T4SjTKnQ9osm0iU--9zxFk-r7xVHZiDfV63mm580zVKjOaJzClSmQ-6u_QSGubLzHN92bYJz_2yY_P7jkcG2a41OWwYrzsAPBzO2Y_eQbpoxUZJ9-0-uw_iOaWylwD6Lx9Z8DAGOAab1zuClk463jQPOQwXFu6nZCkPLHbS_zOL_InphxPZMzcnchn7hKWXAQbkUDXA0-y0fTPWBTZC3t5EGkgGfo9Vt8CsuyqNjl18pI9LVPNbXKifRJgVP8");'></div>
-</div>
-</header>
-<main class="flex-1">
-<div class="relative">
-<div class="flex min-h-[600px] flex-col items-center justify-center gap-8 bg-cover bg-center bg-no-repeat p-4" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDghLU2kcmDpbnxCB2F8aJuSQhaHwB9ZeiYVAhNINgJycWtFT3un10s0liVku_EpDp8G_HfGRqIVtH7RUkDhD2EBqUFabhHyNcW0mQZijom56bxQd2Wm-5EqdrzhEnPb83BlH6yYGbXJ3Jvj2_qac2J4qrk20O8FqD4Uyx7wCEDjNOrZT2b2FpC-ugFhDicIcAazbZ97t7yhwAHEfDjWRYbEr2ckYJbc8mst3h7NRt7sdd-6M3MH2nTKrTn7wW3ncjMzn36ha-8oHM");'>
-<div class="flex flex-col gap-4 text-center text-white">
-<p class="text-lg font-semibold">Yusuf MAT</p>
-<h1 class="text-5xl font-extrabold leading-tight tracking-tight md:text-6xl">
-                  MedMar Medikal Market
-                </h1>
-<p class="mx-auto max-w-2xl text-lg font-light md:text-xl">
-                  Özel üretim medikal ürünlerin yapıldığı ve satıldığı güvenilir adresiniz.
-                </p>
-</div>
-<a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-lg font-bold leading-normal tracking-wide shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105" href="category.html">
-<span class="truncate">Ürünleri İncele</span>
-</a>
-</div>
-</div>
-<section class="py-16 px-10">
-<div class="max-w-7xl mx-auto text-center">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Medikal Ürün Hizmetlerimiz</h2>
-<p class="text-lg text-[var(--secondary-text-color)] mx-auto max-w-3xl mb-12">
-MedMar olarak, sağlığınız için en kaliteli medikal ürünleri sunmaya adadık. Geniş ürün yelpazemiz ve uzman ekibimizle, ihtiyaç duyduğunuz her an yanınızdayız.
-</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
-<span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">
-                  local_hospital
-                </span>
-<h3 class="text-xl font-bold mb-2">Geniş Ürün Yelpazesi</h3>
-<p class="text-[var(--secondary-text-color)] text-center">
-Cerrahi malzemelerden hasta bakım ürünlerine, ortopedik desteklerden kişisel hijyen ürünlerine kadar ihtiyacınız olan her şey bir arada.
-</p>
-</div>
-<div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
-<span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">
-                  medication
-                </span>
-<h3 class="text-xl font-bold mb-2">Uzman Danışmanlık</h3>
-<p class="text-[var(--secondary-text-color)] text-center">
-Alanında uzman ekibimizle, doğru ürünü seçmeniz için size özel danışmanlık hizmeti sunuyoruz.
-</p>
-</div>
-<div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
-<span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">
-                  home_health
-                </span>
-<h3 class="text-xl font-bold mb-2">Hızlı ve Güvenilir Teslimat</h3>
-<p class="text-[var(--secondary-text-color)] text-center">
-Siparişlerinizi en kısa sürede ve güvenli bir şekilde adresinize ulaştırıyoruz.
-</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-</div>
-</div>
-<script>
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        body.classList.toggle('light');
-      });
+    <div class="relative flex min-h-screen w-full flex-col bg-[var(--bg-color)] text-[var(--text-color)] group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--border-color)] px-6 md:px-10 py-4 relative z-10">
+                <div class="flex items-center gap-4 text-[var(--text-color)]">
+                    <svg class="h-8 w-8 text-[var(--accent-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455V13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366ZM24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437Z" fill="currentColor"></path>
+                    </svg>
+                    <h1 class="text-2xl font-bold tracking-tighter">MedMar</h1>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-[var(--text-color)]">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+
+                <nav id="menu-links" class="hidden md:flex md:items-center md:gap-8 absolute md:relative top-full left-0 w-full md:w-auto bg-[var(--bg-color)] md:bg-transparent border-b md:border-none border-solid border-[var(--border-color)] p-4 md:p-0">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                        <a href="index.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ana Sayfa</a>
+                        <a href="market.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Sipariş</a>
+                        <a href="category.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">Ürünler</a>
+                        <a href="contact.html" class="text-base font-medium hover:text-[var(--accent-color)] transition-colors">İletişim</a>
+                    </div>
+                </nav>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[var(--input-bg-color)] text-[var(--text-color)] gap-2 text-sm font-bold" id="theme-toggle">
+                        <span class="material-symbols-outlined dark:hidden">light_mode</span>
+                        <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+                    </button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTDWZLAErzaV30S2T4SjTKnQ9osm0iU--9zxFk-r7xVHZiDfV63mm580zVKjOaJzClSmQ-6u_QSGubLzHN92bYJz_2yY_P7jkcG2a41OWwYrzsAPBzO2Y_eQbpoxUZJ9-0-uw_iOaWylwD6Lx9Z8DAGOAab1zuClk463jQPOQwXFu6nZCkPLHbS_zOL_InphxPZMzcnchn7hKWXAQbkUDXA0-y0fTPWBTZC3t5EGkgGfo9Vt8CsuyqNjl18pI9LVPNbXKifRJgVP8");'></div>
+                </div>
+            </header>
+
+            <main class="flex-1">
+                <div class="relative">
+                    <div class="flex min-h-[500px] md:min-h-[600px] flex-col items-center justify-center gap-8 bg-cover bg-center bg-no-repeat p-6 text-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDghLU2kcmDpbnxCB2F8aJuSQhaHwB9ZeiYVAhNINgJycWtFT3un10s0liVku_EpDp8G_HfGRqIVtH7RUkDhD2EBqUFabhHyNcW0mQZijom56bxQd2Wm-5EqdrzhEnPb83BlH6yYGbXJ3Jvj2_qac2J4qrk20O8FqD4Uyx7wCEDjNOrZT2b2FpC-ugFhDicIcAazbZ97t7yhwAHEfDjWRYbEr2ckYJbc8mst3h7NRt7sdd-6M3MH2nTKrTn7wW3ncjMzn36ha-8oHM");'>
+                        <div class="flex flex-col gap-4 text-white">
+                            <p class="text-lg font-semibold">Yusuf MAT</p>
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                                MedMar Medikal Market
+                            </h1>
+                            <p class="mx-auto max-w-2xl text-base md:text-xl font-light">
+                                Özel üretim medikal ürünlerin yapıldığı ve satıldığı güvenilir adresiniz.
+                            </p>
+                        </div>
+                        <a class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--accent-color)] text-white text-lg font-bold leading-normal tracking-wide shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105" href="category.html">
+                            <span class="truncate">Ürünleri İncele</span>
+                        </a>
+                    </div>
+                </div>
+
+                <section class="py-12 md:py-16 px-6 md:px-10">
+                    <div class="max-w-7xl mx-auto text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Medikal Ürün Hizmetlerimiz</h2>
+                        <p class="text-lg text-[var(--secondary-text-color)] mx-auto max-w-3xl mb-12">
+                            MedMar olarak, sağlığınız için en kaliteli medikal ürünleri sunmaya adadık. Geniş ürün yelpazemiz ve uzman ekibimizle, ihtiyaç duyduğunuz her an yanınızdayız.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
+                                <span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">local_hospital</span>
+                                <h3 class="text-xl font-bold mb-2">Geniş Ürün Yelpazesi</h3>
+                                <p class="text-[var(--secondary-text-color)] text-center">
+                                    Cerrahi malzemelerden hasta bakım ürünlerine, ortopedik desteklerden kişisel hijyen ürünlerine kadar ihtiyacınız olan her şey bir arada.
+                                </p>
+                            </div>
+                            <div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
+                                <span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">medication</span>
+                                <h3 class="text-xl font-bold mb-2">Uzman Danışmanlık</h3>
+                                <p class="text-[var(--secondary-text-color)] text-center">
+                                    Alanında uzman ekibimizle, doğru ürünü seçmeniz için size özel danışmanlık hizmeti sunuyoruz.
+                                </p>
+                            </div>
+                            <div class="flex flex-col items-center p-6 bg-[var(--input-bg-color)] rounded-lg shadow-md">
+                                <span class="material-symbols-outlined text-5xl text-[var(--accent-color)] mb-4">home_health</span>
+                                <h3 class="text-xl font-bold mb-2">Hızlı ve Güvenilir Teslimat</h3>
+                                <p class="text-[var(--secondary-text-color)] text-center">
+                                    Siparişlerinizi en kısa sürede ve güvenli bir şekilde adresinize ulaştırıyoruz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="flex justify-center border-t border-solid border-t-[var(--border-color)] bg-[var(--bg-color)]">
+                <div class="w-full max-w-7xl flex-1 flex-col px-6 md:px-10">
+                    <div class="flex flex-col gap-6 py-8 text-center @container">
+                        <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-around">
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Gizlilik Politikası</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="#">Kullanım Koşulları</a>
+                            <a class="text-[var(--secondary-text-color)] text-base font-normal leading-normal min-w-40 hover:text-[var(--accent-color)] transition-colors" href="contact.html">İletişim</a>
+                        </div>
+                        <p class="text-[var(--secondary-text-color)] text-sm font-normal leading-normal">© 2023 MedMar. Tüm hakları saklıdır.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Tema Değiştirici
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
+
+        // Mobil Menü
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+        if (menuToggle && menuLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuLinks.classList.toggle('hidden');
+            });
+        }
     </script>
-</body></html>
+</body>
+</html>
